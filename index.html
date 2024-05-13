@@ -5,187 +5,224 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Live Cat</title>
+
+    <!-- loader -->
+    <style>
+      .loader {
+        width: 50px;
+        aspect-ratio: 1;
+        display: grid;
+      }
+      .loader::before,
+      .loader::after {
+        content: "";
+        grid-area: 1/1;
+        --c: no-repeat radial-gradient(farthest-side, #ff66c4 92%, #f43cae);
+        background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+          var(--c) 0 50%;
+        background-size: 12px 12px;
+        animation: l12 1s infinite;
+      }
+      .loader::before {
+        margin: 4px;
+        filter: hue-rotate(45deg);
+        background-size: 8px 8px;
+        animation-timing-function: linear;
+      }
+
+      @keyframes l12 {
+        100% {
+          transform: rotate(0.5turn);
+        }
+      }
+    </style>
   </head>
   <body class="font-comic">
-    <header
-      class="flex items-center justify-between py-8 mx-16 max-w-[1280px] xl:mx-auto"
-    >
-      <a class="text-secondary font-bold underline text-xl" href="#">
-        Buy $LIVE!
-      </a>
+    <div id="loader" class="h-screen w-screen flex items-center justify-center">
+      <div class="loader"></div>
+    </div>
 
-      <div class="flex flex-col items-center">
-        <h1 class="text-primary font-bold text-[60px]">Live Cat</h1>
-        <p class="text-primary font-bold text-sm">
-          The official cat family of the SOL blockchain!
-        </p>
-      </div>
+    <div id="app" class="" style="display: none">
+      <header
+        class="flex items-center justify-between py-8 mx-16 max-w-[1280px] xl:mx-auto"
+      >
+        <a class="text-secondary font-bold underline text-xl" href="#">
+          Buy $LIVE!
+        </a>
 
-      <div class="flex gap-4">
-        <a href="#" class="text-secondary font-bold underline text-xl"
-          >Twitch</a
-        >
-        <a href="#" class="text-secondary font-bold underline text-xl">Dex</a>
-      </div>
-    </header>
-
-    <main class="relative mx-16 max-w-[1280px] xl:mx-auto">
-      <section class="">
-        <div class="flex flex-col gap-4 absolute h-full w-4">
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-
-          <span
-            class="block rounded-full h-4 w-4 bg-secondary"
-            data-aos="fade-up"
-          ></span>
-          <span
-            class="block rounded-full h-4 w-4 bg-primary"
-            data-aos="fade-up"
-          ></span>
-        </div>
-
-        <div class="px-8">
-          <div
-            id="twitch-live"
-            class="aspect-video w-[100%] border-[10px] border-secondary"
-          ></div>
-        </div>
-
-        <div class="absolute right-0 top-0 flex flex-col gap-4 h-full w-4">
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-
-          <span class="block rounded-full h-4 w-4 bg-secondary"></span>
-          <span class="block rounded-full h-4 w-4 bg-primary"></span>
-        </div>
-      </section>
-
-      <section class="flex justify-around items-center">
-        <div class="">
-          <img src="/images/hearts.gif" alt="Hearts animation" />
-        </div>
-
-        <div class="basis-[400px]">
-          <h2 class="mt-16 text-4xl font-bold text-primary text-center">
-            Meet Daisy
-          </h2>
-
-          <div class="flex justify-center items-center">
-            <img
-              src="/images/cat.png"
-              alt="A cat"
-              class="max-w-full border-4 border-primary mt-8"
-              width="200px"
-            />
-          </div>
-
-          <p class="mt-8 text-center text-primary text-base font-bold">
-            Live Cat is a cute livestreamed experience on SOL displaying the
-            life of our very own mama Daisy raising her newborn kittens. Our
-            hope is that the mother’s love spreads to each and every viewer, and
-            serves as a peaceful break from the chaos. So, sit back, grab a
-            snack, and enjoy! &lt;3
+        <div class="flex flex-col items-center">
+          <h1 class="text-primary font-bold text-[60px]">Live Cat</h1>
+          <p class="text-primary font-bold text-sm">
+            The official cat family of the SOL blockchain!
           </p>
+        </div>
 
-          <div class="mt-8 flex justify-center">
-            <a
-              href="#"
-              class="inline-block bg-primary text-white text-3xl px-8 py-4"
-              >Buy $LIVE</a
-            >
+        <div class="flex gap-4">
+          <a href="#" class="text-secondary font-bold underline text-xl"
+            >Twitch</a
+          >
+          <a href="#" class="text-secondary font-bold underline text-xl">Dex</a>
+        </div>
+      </header>
+
+      <main class="relative mx-16 max-w-[1280px] xl:mx-auto">
+        <section class="">
+          <div class="flex flex-col gap-4 absolute h-full w-4">
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
+
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
+
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
+
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
+
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
+
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
+
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
+
+            <span
+              class="block rounded-full h-4 w-4 bg-secondary"
+              data-aos="fade-up"
+            ></span>
+            <span
+              class="block rounded-full h-4 w-4 bg-primary"
+              data-aos="fade-up"
+            ></span>
           </div>
-        </div>
 
-        <div class="">
-          <img src="/images/hearts.gif" alt="Hearts animation" />
-        </div>
-      </section>
-    </main>
+          <div class="px-8">
+            <div
+              id="twitch-live"
+              class="aspect-video w-[100%] border-[10px] border-secondary"
+            ></div>
+          </div>
 
-    <footer>
-      <div class="text-center text-primary bg-gray-200 py-2 mt-20">
-        This token is purely for entertainment purposes only.
-      </div>
-    </footer>
+          <div class="absolute right-0 top-0 flex flex-col gap-4 h-full w-4">
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+
+            <span class="block rounded-full h-4 w-4 bg-secondary"></span>
+            <span class="block rounded-full h-4 w-4 bg-primary"></span>
+          </div>
+        </section>
+
+        <section class="flex justify-around items-center">
+          <div class="">
+            <img src="/images/hearts.gif" alt="Hearts animation" />
+          </div>
+
+          <div class="basis-[460px]">
+            <h2 class="mt-16 text-5xl font-bold text-primary text-center">
+              Meet Daisy
+            </h2>
+
+            <div class="flex justify-center items-center">
+              <img
+                src="/images/cat.png"
+                alt="A cat"
+                class="max-w-full border-4 border-primary mt-8"
+                width="300px"
+              />
+            </div>
+
+            <p class="mt-8 text-center text-primary font-bold text-lg">
+              Live Cat is a cute livestreamed experience on SOL displaying the
+              life of our very own mama Daisy raising her newborn kittens. Our
+              hope is that the mother’s love spreads to each and every viewer,
+              and serves as a peaceful break from the chaos. So, sit back, grab
+              a snack, and enjoy! &lt;3
+            </p>
+
+            <div class="mt-16 flex justify-center">
+              <a
+                href="#"
+                class="inline-block bg-primary text-white text-3xl px-8 py-4"
+                >Buy $LIVE</a
+              >
+            </div>
+          </div>
+
+          <div class="">
+            <img src="/images/hearts.gif" alt="Hearts animation" />
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="text-center text-primary bg-gray-200 py-2 mt-20">
+          This token is purely for entertainment purposes only.
+        </div>
+      </footer>
+    </div>
 
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script type="module" src="src/main.js"></script>

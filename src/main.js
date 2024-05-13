@@ -5,7 +5,11 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./index.css";
 
-AOS.init();
+window.addEventListener("load", () => {
+  AOS.init();
+  document.getElementById("app").style.removeProperty("display");
+  document.getElementById("loader").classList.add("hidden");
+});
 
 const options = {
   channel: "livecatsol",

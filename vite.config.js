@@ -1,4 +1,2 @@
 // vite.config.js
-export default {
-  base: "/live-cat/",
-};
+export default {};
