@@ -5,15 +5,12 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import "./index.css";
 
-AOS.init({
-  startEvent: "load",
-  easing: "ease-in-out",
-});
+AOS.init();
 
-var options = {
+const options = {
   channel: "livecatsol",
   width: "100%",
   height: "100%",
 };
-var player = new Twitch.Player("twitch-live", options);
-player.setVolume(0.5);
+
+const player = new Twitch.Player("twitch-live", options);
