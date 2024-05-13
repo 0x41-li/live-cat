@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Comic Sans";
+  src: url("/fonts/comic-sans/COMICSANS.TTF") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Comic Sans";
+  src: url("/fonts/comic-sans/COMICSANSBOLD.TTF") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
