@@ -37,7 +37,7 @@
       }
     </style>
   </head>
-  <body class="font-comic">
+  <body class="font-comic overflow-hidden">
     <div id="loader" class="h-screen w-screen flex items-center justify-center">
       <div class="loader"></div>
     </div>
@@ -46,11 +46,14 @@
       <header
         class="flex items-center justify-between py-8 mx-16 max-w-[1280px] xl:mx-auto"
       >
-        <a class="text-secondary font-bold underline text-xl" href="#">
+        <a
+          class="header-item text-secondary font-bold underline text-xl hover:!scale-125"
+          href="#"
+        >
           Buy $LIVE!
         </a>
 
-        <div class="flex flex-col items-center">
+        <div class="header-item flex flex-col items-center">
           <h1 class="text-primary font-bold text-[60px]">Live Cat</h1>
           <p class="text-primary font-bold text-sm">
             The official cat family of the SOL blockchain!
@@ -58,10 +61,16 @@
         </div>
 
         <div class="flex gap-4">
-          <a href="#" class="text-secondary font-bold underline text-xl"
+          <a
+            href="#"
+            class="header-item text-secondary font-bold underline text-xl hover:!scale-125"
             >Twitch</a
           >
-          <a href="#" class="text-secondary font-bold underline text-xl">Dex</a>
+          <a
+            href="#"
+            class="header-item text-secondary font-bold underline text-xl hover:!scale-125"
+            >Dex</a
+          >
         </div>
       </header>
 
