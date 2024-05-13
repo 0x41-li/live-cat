@@ -27,6 +27,39 @@ window.addEventListener("load", () => {
       });
     },
   });
+
+  // -- Hero
+  const heroSpans = document.querySelectorAll(".hero-spans-parent span");
+  const heroSpans2 = document.querySelectorAll(".hero-spans-parent-2 span");
+  const twitchLiveContainer = document.querySelector("#twitch-live-container");
+
+  animejs({
+    targets: heroSpans,
+    opacity: [0, 1],
+    scale: [0, 1, 1.5, 1],
+    duration: 1000,
+    delay: animejs.stagger(100, { start: 1000 }),
+    easing: "easeInOutQuad",
+  });
+
+  animejs({
+    targets: heroSpans2,
+    opacity: [0, 1],
+    scale: [0, 1, 1.5, 1],
+    duration: 1000,
+    delay: animejs.stagger(100, { start: 1000 }),
+    easing: "easeInOutQuad",
+  });
+
+  animejs({
+    targets: twitchLiveContainer,
+    translateY: [200, 0],
+    opacity: [0, 1],
+    duration: 2000,
+    delay: 3000,
+    easing: "easeInOutQuad",
+    delay: animejs.stagger(200, { start: 1000 }),
+  });
 });
 
 const options = {

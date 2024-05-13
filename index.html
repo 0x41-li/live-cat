@@ -76,7 +76,9 @@
 
       <main class="relative mx-16 max-w-[1280px] xl:mx-auto">
         <section class="">
-          <div class="flex flex-col gap-4 absolute h-full w-4">
+          <div
+            class="hero-spans-parent absolute flex flex-col gap-4 h-full w-4"
+          >
             <span
               class="block rounded-full h-4 w-4 bg-secondary"
               data-aos="fade-up"
@@ -150,14 +152,16 @@
             ></span>
           </div>
 
-          <div class="px-8">
+          <div id="twitch-live-container" class="px-8">
             <div
               id="twitch-live"
               class="aspect-video w-[100%] border-[10px] border-secondary"
             ></div>
           </div>
 
-          <div class="absolute right-0 top-0 flex flex-col gap-4 h-full w-4">
+          <div
+            class="hero-spans-parent-2 absolute right-0 top-0 flex flex-col gap-4 h-full w-4"
+          >
             <span class="block rounded-full h-4 w-4 bg-secondary"></span>
             <span class="block rounded-full h-4 w-4 bg-primary"></span>
 
